@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<cstring> // for memset function
 using namespace std;
 
 class Array
@@ -58,7 +59,12 @@ class Array
             cout<<arr[i]<<" ";
         }
     
-    }       
+    } 
+
+    void samenumber()
+    {
+        memset(arr,1,sizeof(arr));
+    }      
 };
 
 int main()
@@ -97,11 +103,12 @@ int main()
 
     a1.deletee(val);
     a1.display();
-    int value,index;
-    cout<<"\nEnter Number To be Insert:";
-    cin>>value;
-    cout<<"\nEnter Number Index:";
-    cin>>index;
+
+    // Write a Function to insert value at particular Location
+
+    a1.samenumber();
+    a1.display();
+
 
 
 

@@ -45,6 +45,39 @@ class arrayy
         
     }
 
+    int min()
+    {
+        int min=INT_MAX;
+
+        for (int i = 0; i < size; i++)
+        {
+            if(arr1[i]<min)
+            {
+                min=arr1[i];
+            }
+        }
+        return min;
+        
+    }
+
+    //First-last Number of Array
+    int extermineprint()
+    {
+        int start=0;
+        int end=size-1;
+
+        while (true)
+        {
+            if(start>end)
+                break;
+            cout<<arr1[start]<<" ";
+            cout<<arr1[end]<<" ";
+            start++;
+            end--;
+        }
+        
+    }
+
     void display()
     {
         for (int i = 0; i < 10; i++)
@@ -65,8 +98,17 @@ int main()
     cout<<"\n";
     a1.counttt();
 
-    int result=a1.max();
-    cout<<"\nThe Max Number in Array Two is "<<result;
+    int max=a1.max();
+    cout<<"\nThe Max Number in Array Two is "<<max;
+
+    int min=a1.min();
+    cout<<"\nThe Min Number in Array Two is "<<min;
+
+    cout<<endl;
+    a1.extermineprint();
+    a1.display();
+
+
 
     return 0;
 }
