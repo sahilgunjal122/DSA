@@ -78,18 +78,6 @@ int uniquenumber(vector<int> arr)
     return ans;
 }
 
-class Solution {
-public:
-    bool uniqueOccurrences(vector<int>& arr) {
-        bool ans=;
-        for(int i=0;i<arr.size();i++)
-        {
-            ans=ans^arr[i];
-        }
-        return ans;
-    }
-};
-
 
 
 int main()
