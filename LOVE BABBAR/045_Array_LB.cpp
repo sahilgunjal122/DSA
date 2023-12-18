@@ -126,6 +126,30 @@ int InterSectionArray(vector<int> arr,vector<int> brr)
     }
 }
 
+//PAIR SUM
+
+int PairSum(vector<int> arr)
+{
+    for (int i = 0; i < arr.size(); i++)
+    {
+        //cout<<"We are at element: "<<arr[i]<<endl;
+        int element=arr[i];
+       for (int j = i+1; j < arr.size(); j++)
+       {
+        //cout<<"pair with"<<arr[j]<<endl;
+        //cout<<"("<<element<<","<<arr[j]<<")"<<endl;
+
+        if(element+arr[j]==9)
+        {
+            cout<<"("<<element<<","<<arr[j]<<")"<<endl;
+        }
+       }
+       
+        
+    }
+    
+}
+
 
 
 int main()
@@ -157,11 +181,17 @@ int main()
 
     //INTERSECTION OF ARRAY
 
-    // vector<int> arr2{1,2,4,4,5};
-    // vector<int> brr2{4,6,8,9};
+    // vector<int> arr2{1,2,2,1};
+    // vector<int> brr2{2,2};
 
     // InterSectionArray(arr2,brr2);
-    
+
+
+    //PAIR SUM
+
+    vector<int> arr3{1,3,5,7,2,4,6};
+
+    PairSum(arr3);
 
     
 
