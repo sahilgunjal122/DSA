@@ -178,35 +178,48 @@ int triplePairSum(vector<int> arr,int Sum){
 
 //SORT 0's & 1's
 
+void printArray(vector<int> arr)
+{
+    for(auto val:arr){
+        cout<<val<<" ";
+    }
+}
+
 vector<int> sortzeroso(vector<int> arr)
 {
     vector<int> result;
     int start=0;
     int end=arr.size()-1;
     int i=0;
-   while (start<=end)
+   while (start<=end)  //or (i!=end)
    {
+        //cout<<"\nfor i="<<i<<" start="<<start<<" end="<<end<<endl;
         if(arr[i]==0)
-        {
+        { //  cout<<"Found Zero"<<endl;
+            //cout<<"Before Swap:";
+            //printArray(arr);
+            
             swap(arr[start],arr[i]);
             start++;
+            i++;
+            //cout<<"\nAfter Swap:";
+            //printArray(arr);
         }
         if(arr[i]==1)
         {
+            //cout<<"Found One"<<endl;
+            //cout<<"Before Swap:";
+            //printArray(arr);
+
             swap(arr[i],arr[end]);
             end--;
+
+            //cout<<"\nAfter Swap:";
             
         }
    }
-
-   for(auto value:arr)
-    {
-        cout<<value<<" ";
-    }
-   
     
-
-        
+    printArray(arr);
         
 }
     
@@ -268,10 +281,12 @@ int main()
 
     //SORT 0's & 1's
 
-    vector<int> arr5{1,0,1,0,0,1,1,0,1,1};
+    // vector<int> arr5{1,0,1,0,0,1,1,0,1,1};
+
+    // sortzeroso(arr5);
 
 
-    sortzeroso(arr5);
+
 
 
 
