@@ -1,72 +1,40 @@
-#include<bits/stdc++.h>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-class arrayy
-{
-    private:
-    int arr[10]={1,0,1,0,0,1,0,1,1,1};
-    int arr1[10]={100,45,56,39,41,9,4,33,88,12};
-    int size=10;
-    int numofZ=0;
-    int numofO=0;
+class pairr{
     public:
-
-    void counttt()
+    int extermeprint(vector<int> arr)
     {
-        for (int i = 0; i < size; i++)
-        {
-            if(arr[i]==0)
-            {
-                numofZ++;
-            }
-            if(arr[i]==1)
-            {
-                numofO++;
-            }
-        }
+        int start=0;
+        int end=arr.size()-1;
 
-        cout<<"Zeros:"<<numofO<<endl;
-        cout<<"Ones:"<<numofZ<<endl;
+        while (start<=end)
+        {
+            if(start>end)
+                break;
+            cout<<arr[start]<<" ";
+            cout<<arr[end]<<" ";
+            start++;
+            end--;
+        }
         
     }
 
-    int max()
-    {
-        int max=INT_MIN;
 
-        for (int i = 0; i < size; i++)
-        {
-            if(arr1[i]>max)
-            {
-                max=arr1[i];
-            }
-        }
-        return max;
-        
-    }
-
-    void display()
-    {
-        for (int i = 0; i < 10; i++)
-        {   
-            cout<<arr[i]<<" ";
-        }
-        
-    }  
 };
-
-
 
 int main()
 {
-    arrayy a1;
-   
-    a1.display();
-    cout<<"\n";
-    a1.counttt();
+    pairr p1;
 
-    int result=a1.max();
-    cout<<"\nThe Max Number in Array Two is "<<result;
+    vector<int> barr{10,20,30,40,50};
+
+    p1.extermeprint(barr);
+
+
+
+
 
     return 0;
 }
