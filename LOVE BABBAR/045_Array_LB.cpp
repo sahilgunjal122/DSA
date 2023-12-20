@@ -150,7 +150,6 @@ int PairSum(vector<int> arr)
     
 }
 
-
 //TRIPLE PIR SUM
 
 int triplePairSum(vector<int> arr,int Sum){
