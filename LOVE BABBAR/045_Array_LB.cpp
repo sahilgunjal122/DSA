@@ -151,6 +151,70 @@ int PairSum(vector<int> arr)
 }
 
 
+//TRIPLE PIR SUM
+
+int triplePairSum(vector<int> arr,int Sum){
+    
+    for (int i = 0; i < arr.size(); i++)
+    {
+        for (int j = i+1; j < arr.size(); j++)
+        {
+            for (int k = j+1; k < arr.size(); k++)
+            {
+                if(arr[i]+arr[j]+arr[k]==Sum)
+                {
+                    cout<<"("<<arr[i]<<","<<arr[j]<<","<<arr[k]<<")"<<endl;
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+
+}
+
+
+//SORT 0's & 1's
+
+vector<int> sortzeroso(vector<int> arr)
+{
+    vector<int> result;
+    int start=0;
+    int end=arr.size()-1;
+    int i=0;
+   while (start<=end)
+   {
+        if(arr[i]==0)
+        {
+            swap(arr[start],arr[i]);
+            start++;
+        }
+        if(arr[i]==1)
+        {
+            swap(arr[i],arr[end]);
+            end--;
+            
+        }
+   }
+
+   for(auto value:arr)
+    {
+        cout<<value<<" ";
+    }
+   
+    
+
+        
+        
+}
+    
+    
+
+
+
+
 
 int main()
 {
@@ -189,20 +253,30 @@ int main()
 
     //PAIR SUM
 
-    vector<int> arr3{1,3,5,7,2,4,6};
+    // vector<int> arr3{1,3,5,7,2,4,6};
 
-    PairSum(arr3);
+    // PairSum(arr3);
+
+
+    //TRIPLE PAIR SUM
+
+    // vector<int> arr4{10,20,30,40,68,33};
+    // int Sum;
+    // cout<<"Enter Sum of Triplet:"<<endl;
+    // cin>>Sum;
+    // triplePairSum(arr4,Sum);
+
+    //SORT 0's & 1's
+
+    vector<int> arr5{1,0,1,0,0,1,1,0,1,1};
+
+
+    sortzeroso(arr5);
+
+
 
     
 
-
-
-    
-
-
-
-    
-    
     
     
     return 0;
