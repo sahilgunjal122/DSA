@@ -1,4 +1,5 @@
 #include<iostream>
+#include<limits.h>
 #include<vector>
 using namespace std;
 
@@ -21,6 +22,8 @@ class pairr{
         
     }
 
+    
+
 
 };
 
@@ -32,6 +35,8 @@ int main()
 
     p1.extermeprint(barr);
 
+
+int main=INT_MIN;
 
 
 
