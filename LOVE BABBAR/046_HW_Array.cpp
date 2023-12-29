@@ -227,7 +227,7 @@ vector<int> commonelement(vector<int> A, vector<int> B, vector<int> C, int n1, i
         {
             i++;
         }
-        else if (B[i] < C[k])
+        else if (B[j] < C[k])
         {
             j++;
         }
