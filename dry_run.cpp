@@ -1,45 +1,46 @@
-#include<iostream>
-#include<limits.h>
-#include<vector>
+#include <iostream>
+#include <set>
+#include <vector>
 using namespace std;
 
-class pairr{
-    public:
-    int extermeprint(vector<int> arr)
+class Solution
+{
+public:
+    void wavePrint(vector<vector<int>> matrix)
     {
-        int start=0;
-        int end=arr.size()-1;
 
-        while (start<=end)
+        int row = matrix.size();
+        int colm = matrix[0].size();
+        vector<int> ans;
+        for (int Column = 0; Column < colm; Column++)
         {
-            if(start>end)
-                break;
-            cout<<arr[start]<<" ";
-            cout<<arr[end]<<" ";
-            start++;
-            end--;
+            if ((Column & 1) == 0)
+            {
+                for (int i = 0; i < row; i++)
+                {
+                    ans.push_back(matrix[i][Column]);
+                }
+            }
+            else
+            {
+                for (int i = row - 1; i >= 0; i--)
+                {
+                    ans.push_back(matrix[i][Column]);
+                }
+            }
         }
-        
+        for (auto it : ans)
+        {
+            cout << it << " ";
+        }
     }
-
-    
-
-
 };
 
 int main()
 {
-    pairr p1;
-
-    vector<int> barr{10,20,30,40,50};
-
-    p1.extermeprint(barr);
-
-
-int main=INT_MIN;
-
-
-
+    Solution s1;
+    vector<vector<int>> v{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    s1.wavePrint(v);
 
     return 0;
 }

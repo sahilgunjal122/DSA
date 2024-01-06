@@ -1,5 +1,4 @@
-
-    // for (auto val : ans)
+ // for (int i = starting_row; i <= ending_row; i++)
     // {
-    //     cout << val << " ";
+    //     cout << v[i][ending_colm];
     // }

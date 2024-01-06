@@ -248,6 +248,87 @@ vector<int> commonelement(vector<int> A, vector<int> B, vector<int> C, int n1, i
     return ans;
 }
 
+// 7.Wave Print a Matrix
+
+void wavePrint(vector<vector<int>> v)
+{
+    int row = v.size();
+    int colm = v[0].size();
+
+    for (int startcol = 0; startcol < colm; startcol++)
+    {
+        // even no. of Column top-->bottom
+        if ((startcol & 1) == 0)
+        {
+            for (int i = 0; i < row; i++)
+            {
+                cout << v[i][startcol] << " ";
+            }
+        }
+        else
+        {
+            // odd print bottom--> top
+            for (int i = row - 1; i >= 0; i--)
+            {
+                cout << v[i][startcol] << " ";
+            }
+        }
+    }
+}
+
+// 8.Spiral Print
+
+void SpiralPrint(vector<vector<int>> v)
+{
+    vector<int> result;
+    int row = v.size();
+    int colm = v[0].size();
+    int total_elements = row * colm;
+
+    int starting_row = 0;
+    int ending_colm = colm - 1;
+    int ending_row = row - 1;
+    int starting_colm = 0;
+
+    int count = 0;
+    while (count < total_elements)
+    {
+        // print starting Row
+        for (int i = starting_row; i <= ending_colm && count < total_elements; i++)
+        {
+            cout << v[starting_colm][i];
+            count++;
+        }
+        starting_row++;
+
+        // print ending colm
+
+        for (int i = starting_row; i <= ending_row && count < total_elements; i++)
+        {
+            cout << v[i][ending_colm];
+            count++;
+        }
+
+        ending_colm--;
+
+        // print ending row
+        for (int i = ending_colm; i >= starting_colm && count < total_elements; i--)
+        {
+            cout << v[ending_row][i];
+            count++;
+        }
+        ending_row--;
+
+        // print starting colm
+        for (int i = ending_row; i >= starting_row && count < total_elements; i--)
+        {
+            cout << v[i][starting_colm];
+            count++;
+        }
+        starting_colm++;
+    }
+}
+
 int main()
 {
     vector<int> arr{1, 3, 5, 3, 7, 5};
@@ -271,16 +352,36 @@ int main()
 
     // 6.Comman Element in 3 Array
 
-    vector<int> A{1, 5, 10, 20, 40, 80};
-    vector<int> B{6, 7, 20, 80, 100};
-    vector<int> C{3, 4, 15, 20, 30, 70, 80, 120};
+    // vector<int> A{1, 5, 10, 20, 40, 80};
+    // vector<int> B{6, 7, 20, 80, 100};
+    // vector<int> C{3, 4, 15, 20, 30, 70, 80, 120};
 
-    vector<int> ans;
-    ans = commonelement(A, B, C, 6, 5, 8);
+    // vector<int> ans;
+    // ans = commonelement(A, B, C, 6, 5, 8);
 
-    for (auto val : ans)
-    {
-        cout << val << " ";
-    }
+    // for (auto val : ans)
+    // {
+    //     cout << val << " ";
+    // }
+
+    // 7.wave Print
+    // vector<vector<int>> v{
+    //     {1, 2, 3, 4},
+    //     {5, 6, 7, 8},
+    //     {9, 10, 11, 12},
+    //     {13, 14, 15, 16},
+    //     {17, 18, 19, 20}};
+
+    // wavePrint(v);
+
+    // 8.Spiral Print
+
+    // vector<vector<int>> v{
+    //     {1, 2, 3},
+    //     {4, 5, 6},
+    //     {7, 8, 9}};
+    // vector<int> ans;
+    // SpiralPrint(v);
+
     return 0;
 }
