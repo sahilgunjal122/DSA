@@ -96,7 +96,7 @@ void leftofArrray(int *nums, int n)
     }
 }
 
-// 3.Find Duplicate elemeny in the array
+// 3.Find Duplicate element in the array
 
 int Duplicate(vector<int> arr, int n)
 {
