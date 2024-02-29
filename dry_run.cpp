@@ -1,46 +1,48 @@
-#include <iostream>
-#include <set>
-#include <vector>
+#include <bits/stdc++.h>
+#include <algorithm>
 using namespace std;
 
-class Solution
+int binarysearch(int arr[], int size, int target)
 {
-public:
-    void wavePrint(vector<vector<int>> matrix)
-    {
+    int start = 0;
+    int end = size - 1;
 
-        int row = matrix.size();
-        int colm = matrix[0].size();
-        vector<int> ans;
-        for (int Column = 0; Column < colm; Column++)
+    while (start <= end)
+    {
+        int mid = start + (end - start) / 2;
+        int element = arr[mid];
+
+        if (element == target)
         {
-            if ((Column & 1) == 0)
-            {
-                for (int i = 0; i < row; i++)
-                {
-                    ans.push_back(matrix[i][Column]);
-                }
-            }
-            else
-            {
-                for (int i = row - 1; i >= 0; i--)
-                {
-                    ans.push_back(matrix[i][Column]);
-                }
-            }
+            return mid;
         }
-        for (auto it : ans)
+        else if (target < element)
         {
-            cout << it << " ";
+            // search in left
+            end = mid - 1;
+        }
+        else
+        {
+            start = mid + 1;
         }
     }
-};
+    return -1;
+}
 
 int main()
 {
-    Solution s1;
-    vector<vector<int>> v{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    s1.wavePrint(v);
+    int arr[] = {2, 4, 6, 8, 10, 12, 16};
+    int target = 10;
+    int size = 7;
+    int indexofterget = binarysearch(arr, size, target);
 
+    if (indexofterget == -1)
+    {
+        cout << "Element not Found ";
+    }
+    else
+    {
+        cout << "Element Found at " << indexofterget;
+    }
     return 0;
 }
