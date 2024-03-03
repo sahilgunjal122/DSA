@@ -35,11 +35,11 @@ int pivot_element(vector<int> arr)
     return -1;
 }
 
-// 2.
+// 2.Square Root of a Number using Binary Search
 
 int main()
 {
-    vector<int> arr{9, 10, 2, 4, 6, 8};
+    vector<int> arr{2, 4, 6, 8, 9, 10};
     int ans = pivot_element(arr);
     if (ans == -1)
     {
@@ -47,7 +47,7 @@ int main()
     }
     else
     {
-        cout << "Ans Att Index " << ans << endl;
+        cout << "Ans at Index " << ans << endl;
         cout << "The Pivot Element is " << arr[ans] << endl;
     }
 
