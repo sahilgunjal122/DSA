@@ -1,48 +1,91 @@
+#include <iostream>
 #include <bits/stdc++.h>
-#include <algorithm>
 using namespace std;
 
-int binarysearch(int arr[], int size, int target)
+int maximum(vector<int> arr)
+{
+    int max = INT8_MIN;
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int minimum(vector<int> arr)
+{
+    int min = INT8_MAX;
+
+    for (int i = 0; i < arr.size(); i++)
+    {
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+void first_last(vector<int> arr)
 {
     int start = 0;
-    int end = size - 1;
+    int end = arr.size() - 1;
 
     while (start <= end)
     {
-        int mid = start + (end - start) / 2;
-        int element = arr[mid];
+        if (start > end)
+            break;
 
-        if (element == target)
-        {
-            return mid;
-        }
-        else if (target < element)
-        {
-            // search in left
-            end = mid - 1;
-        }
-        else
-        {
-            start = mid + 1;
-        }
+        cout << arr[start] << " ";
+        cout << arr[end] << " ";
+        start++;
+        end--;
     }
-    return -1;
+}
+
+void reverseeeeee(vector<int> arr)
+{
+    int start = 0;
+    int end = arr.size() - 1;
+
+    while (start <= end)
+    {
+        if (arr[start] < arr[end])
+        {
+            int temp;
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+        }
+        start++;
+        end--;
+    }
+
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
 }
 
 int main()
 {
-    int arr[] = {2, 4, 6, 8, 10, 12, 16};
-    int target = 10;
-    int size = 7;
-    int indexofterget = binarysearch(arr, size, target);
+    vector<int> arr{10, 20, 40, 60, 3, 367};
+    int ans1, ans2;
+    ans1 = maximum(arr);
+    ans2 = minimum(arr);
+    cout << "The Maximum Number is:" << ans1 << endl;
+    cout << "The Minimum Number is:" << ans2 << endl;
 
-    if (indexofterget == -1)
-    {
-        cout << "Element not Found ";
-    }
-    else
-    {
-        cout << "Element Found at " << indexofterget;
-    }
+    cout << "This is First Last:" << endl;
+    first_last(arr);
+    cout << endl;
+    cout << "This is Reverse" << endl;
+    reverseeeeee(arr);
+    // printttttt(arr);
+
     return 0;
 }
