@@ -1,41 +1,36 @@
-#include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    int majorityElement(vector<int> &nums)
+    int singleNonDuplicate(vector<int> &nums)
     {
-        int count = 0;
         int n = nums.size();
+        vector<int> hash(n, 0);
 
-        vector<int> hash{n + 1, 0};
-
-        for (int i = 0; i < n; i++)
+        for (auto num : nums)
         {
-            hash[nums[i]]++;
+            hash[num]++;
         }
 
-        int max = INT_MIN;
-        for (int i = 0; i < n; i++)
-        {
-            if (hash[i] > max)
+        for (auto it : hash)
+            if (hash[it] == 1)
             {
-                max = hash[i];
+                return it;
             }
-        }
-        return hash[max];
+
+        return -1;
     }
 };
 
 int main()
 {
     Solution s1;
-    vector<int> nums{3, 2, 3};
     int ans;
-    ans = s1.majorityElement(nums);
-    cout << "THis is the ans:" << ans;
+    vector<int> nums{1, 1, 2, 3, 3, 4, 4, 8, 8};
+    ans = s1.singleNonDuplicate(nums);
+    cout << ans << endl;
+
     return 0;
 }
