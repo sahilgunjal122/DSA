@@ -25,8 +25,67 @@ public:
 
         // cout << ch;
     }
+
+    void String()
+    {
+        string str;
+        cout << "Enter Name:";
+        // Get input including spaces.
+        getline(cin, str);
+        cout << str;
+
+        cout << "Length:" << str.length() << endl;
+        cout << "is Empty:" << str.empty() << endl;
+
+        str.push_back('A');
+        cout << str << endl;
+        str.pop_back();
+        cout << str;
+
+        cout << "Specified length String:" << endl;
+        cout << "Substring:" << str.substr(0, 6) << endl;
+
+        cout << "Compare String:" << endl;
+        // Case Sensitive changes acco. to Lower & Upper Case
+        string a = "Piyush";
+        string b = "Piyush";
+
+        if (a.compare(b) == 0)
+            cout << "exctly Same" << endl;
+        else
+            cout << "Not Same" << endl;
+
+        cout << endl;
+        cout << "Find function" << endl;
+
+        string sentence = "hello everyone";
+        string target = "Sahil";
+        // Returns the Index where it has spoted
+        // cout << "The Word at Index:" << sentence.find(target) << endl;
+
+        if (sentence.find(target) == string::npos)
+        {
+            cout << "Not found" << endl;
+        }
+
+        cout << endl;
+        cout << "Replace function" << endl;
+
+        string sen = "My Name is babbar";
+        string word = "Sahil";
+
+        sen.replace(11, 16, word);
+        cout << sen << endl;
+
+        cout << endl;
+        cout << "erase function" << endl;
+
+        sen.erase(11, 16);
+        cout << sen << endl;
+    }
 };
 
+// Questions on Character
 // 1. Length of String
 void lengthOfString()
 {
@@ -122,6 +181,26 @@ void converLowercase(char ch[])
     cout << ch;
 }
 
+// Questions on String
+
+int compareFunction(string a, string b)
+{
+    if (a.length() != b.length())
+        return false;
+    else
+    {
+
+        for (int i = 0; i < a.length(); i++)
+        {
+            if (a[i] != b[i])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 int main()
 {
     Learning l1;
@@ -151,10 +230,20 @@ int main()
     // converUppercase(ch);
 
     // 6. Convert to lower Case
-    char ch[100];
-    cout << "Enter String:";
-    cin.getline(ch, 10);
-    converLowercase(ch);
+    // char ch[100];
+    // cout << "Enter String:";
+    // cin.getline(ch, 10);
+    // converLowercase(ch);
+
+    // String Questions
+    l1.String();
+
+    // 1. Compare function
+
+    // string a = "Sahil";
+    // string b = "Gunjal";
+
+    // cout << "Ans:" << compareFunction(a, b) << endl;
 
     return 0;
 }
