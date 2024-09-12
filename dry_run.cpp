@@ -1,36 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+void merge(vector<int> arr, int n)
 {
-public:
-    int singleNonDuplicate(vector<int> &nums)
+    for (int i = 1; i < n; i++)
     {
-        int n = nums.size();
-        vector<int> hash(n, 0);
-
-        for (auto num : nums)
+        int temp = arr[i];
+        int j = i - 1;
+        for (; j >= 0; j--)
         {
-            hash[num]++;
-        }
-
-        for (auto it : hash)
-            if (hash[it] == 1)
+            if (arr[j] > temp)
             {
-                return it;
+                arr[j + 1] = arr[j];
             }
-
-        return -1;
+            else
+            {
+                break;
+            }
+        }
+        arr[j + 1] = temp;
     }
-};
+
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+}
 
 int main()
 {
-    Solution s1;
-    int ans;
-    vector<int> nums{1, 1, 2, 3, 3, 4, 4, 8, 8};
-    ans = s1.singleNonDuplicate(nums);
-    cout << ans << endl;
+
+    vector<int> arr{10, 45, 36, 58, 30};
+    int n = 5;
+
+    merge(arr, n);
 
     return 0;
 }

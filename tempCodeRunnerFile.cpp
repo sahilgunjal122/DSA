@@ -1,1 +1,2 @@
-printttttt(arr);
+ n; j++)
+            {

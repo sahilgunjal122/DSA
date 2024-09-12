@@ -156,7 +156,6 @@ bool palindrome(char ch[])
 }
 
 // 5. Convert into Upper Case
-
 void converUppercase(char ch[])
 {
     int n = strlen(ch);
@@ -169,7 +168,6 @@ void converUppercase(char ch[])
 }
 
 // 6. Convert into Lower Case
-
 void converLowercase(char ch[])
 {
     int n = strlen(ch);
@@ -196,7 +194,7 @@ int compareFunction(string a, string b)
             {
                 return false;
             }
-        }
+        },
     }
     return true;
 }
